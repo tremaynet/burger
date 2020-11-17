@@ -1,0 +1,25 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "Burger Logger",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tremaynet/burger.git"
+  },
+  "author": "Tremayne Terry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tremaynet/burger/issues"
+  },
+  "homepage": "https://github.com/tremaynet/burger#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1"
+  }
+}
