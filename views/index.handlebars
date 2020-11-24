@@ -1,46 +1,56 @@
-<h1>Burger Life</h1>
-
-<h3>How many Burgers can you eat</h3>
-<h4>EAT button to delete</h4>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-<li class="burgList">
-	{{burger_name}}
-</li>
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-<li id="eatList">
-     	<button class="devoBurg" data-id="{{id}}">
-		EAT
-	</button>
-</li>
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-<li class="burgListDevo">
-	{{burger_name}}
-</li>
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h4>Add a new burger</h4>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="burg">Burger Name:</label>
-    <input type="text" id="burg" name="name">
+<div class="container">
+  <div class="jumbotron">
+    <h1>Eat-Da-Burger <img src="/assets/img/burger.jpg"></h1>
   </div>
-  <button type="submit" id="burgBut">Add Burger</button>
-</form>
+
+  <div class="col-md-12">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2>Burgers to Eat</h2>
+      </div>
+      <div class="panel-body">
+        <div class="col-md-4">
+          <h4>Burgers ready to eat!</h4>
+          <ul>
+            {{#each burgers}}
+              {{#unless this.devoured}}
+                <li>
+                  {{this.id}} {{this.burger_name}}
+
+                  <form action="/{{this.id}}?_method=PUT" method="POST">
+                    <input type="hidden" name="devoured" value="1">
+                    <button class="btn btn-primary" type="submit">DEVOUR IT!</button>
+                  </form>
+                </li>
+              {{/unless}}
+            {{/each}}
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <form class="create-update-form" action="/" method="POST">
+
+            <div class="form-group">
+              <label for="burger">Burger to order:</label>
+              <input type="text" id="burger" name="burger_name">
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+          </div>
+
+        <div class="col-md-4">
+          <h4>Burgers devoured</h4>
+          <ul>
+            {{#each burgers}}
+              {{#if this.devoured}}
+                <li>
+                  {{this.id}} {{this.burger_name}}
+                </li>
+              {{/if}}
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
