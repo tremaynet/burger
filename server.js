@@ -5,7 +5,8 @@ var express = require("express");
 var bodyParser = require("body-parser");
 //Require method-override
 var methodOverride = require("method-override");
- require("./utils")
+
+var util = require('util')
 //Require express-handlebars
 var exphbs = require("express-handlebars");
 
