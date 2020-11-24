@@ -7,7 +7,6 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 //Require express-handlebars
 var exphbs = require("express-handlebars");
-
 var port = 3000;
 
 var app = express();
