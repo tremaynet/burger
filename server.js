@@ -7,7 +7,7 @@ var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 //Require express-handlebars
 var exphbs = require("express-handlebars");
-var port = 3000;
+var port = 8080;
 
 var app = express();
 
@@ -29,4 +29,4 @@ var routes = require("./controllers/burgers_controller.js");
 
 app.use("/", routes);
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 8080);
