@@ -16,5 +16,3 @@ This is a Node.js/Express/MySQL app using a custom ORM that allows the user to i
 4. Use the seeds.sql file in order to fill the table with data either within MySQL workbench or within the MySQL command line type `source seeds.sql`.
 
 5. Within the connection.js file, add your MySQL password in order to connect to the database
-
-![Cow](/public/assets/img/evil-cows-went-to-burger-king.jpg)
