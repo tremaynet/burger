@@ -1,32 +1,23 @@
 {
-  "name": "burger",
+  "name": "post-author-association",
   "version": "1.0.0",
-  "engines": {
-    "node": "12.11.1"
-  },
-  "description": "## About the App",
+  "description": "",
   "main": "server.js",
-  "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^3.1.0",
-    "method-override": "^3.0.0",
-    "mysql": "^2.18.1",
-    "np": "^2.3.10"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "cross-env NODE_ENV=production node server.js",
+    "watch": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tremaynet/burger.git"
-  },
-  "author": "Tremayne Terry",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tremaynet/burger/issues"
-  },
-  "homepage": "https://github.com/tremaynet/burger#readme"
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cross-env": "^7.0.3",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "mysql2": "^1.3.6",
+    "pg": "^8.5.1",
+    "sequelize": "^4.3.1"
+  }
 }

@@ -1,24 +1,21 @@
-// Import the ORM to create functions that will interact with the database.
-var orm = require("../config/orm.js");
-
-var burger = {
-  selectAll: function(cb) {
-    orm.selectAll("burgers", function(res) {
-      cb(res);
-    });
-  },
+module.exports = function(sequelize, DataTypes) {
   
-  insertOne: function(col, valOfCol, cb) {
-    orm.insertOne("burgers", col, valOfCol, function(res) {
-      cb(res);
-    });
-  },
-  updateOne: function(col, condition, cb) {
-    orm.updateOne("burgers", col, condition, function(res) {
-      cb(res);
-    });
-  }
-};
+  // 'burger' in the define method, will be the name
+  // of the table created in the db
+  const Burger = sequelize.define("Burger", {
+    // you do not need to define an id
+    // sequelize does that for you
 
-// Export the database functions for the controller (burgers_controller.js).
-module.exports = burger;
+    burger_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    }
+  });
+
+
+  return Burger;
+};

@@ -1,12 +1,9 @@
-### Schema
+DROP DATABASE IF EXISTS burgers_db;
 CREATE DATABASE burgers_db;
 USE burgers_db;
 
-CREATE TABLE burgers
-(
-	id INT NOT NULL AUTO_INCREMENT,
-	burger_name VARCHAR(255) NOT NULL,
-	devoured BOOLEAN NOT NULL DEFAULT false,
-	date TIMESTAMP(6),
-	PRIMARY KEY (id)
+CREATE TABLE Burgers (
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  burger_name VARCHAR(255) NOT NULL DEFAULT ("none"),
+  devoured  TINYINT(4) NOT NULL DEFAULT 0
 );
